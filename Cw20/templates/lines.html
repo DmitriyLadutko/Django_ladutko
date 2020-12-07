@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} Write lines form {% endblock %}
+{% block content %}
+    <form action="{% url 'write_file' %}" method="post" >
+
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" style="background: greenyellow " >File write.</button>
+    </form>
+
+    <form action="{% url 'read_file' %}" >
+
+    <button type="submit" style="background: deepskyblue ">File read.</button>
+    </form>
+
+    <form action="{% url 'clear_file' %}" target="_blank">
+    <button type="submit" style="background: fuchsia">File clear</button>
+    </form>
+
+
+{% endblock %}

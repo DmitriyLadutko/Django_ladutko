@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {%  block title %}
+            Home
+        {% endblock %}
+    </title>
+</head>
+<body>
+    {% block content %}
+        Home page
+        <table>
+            <thead>
+                <tr>
+                    <th>first name</th>
+                    <th>last name</th>
+                    <th>age</th>
+
+                </tr>
+            </thead>
+
+        <tbody>
+            {% for row in person %}
+                <tr>
+                    <td>{{ row.first_name }}</td>
+                    <td>{{ row.last_name }}</td>
+                    <td>{{ row.age }}</td>
+                </tr>
+
+        {% endfor %}
+        </tbody>
+        </table>
+        <button><a href="{% url 'add_person'%}">Add person</a></button>
+    {% endblock %}
+</body>
+</html>

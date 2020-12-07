@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    {% if name %}
+        <b>{{ name }}</b>
+    {% else %}
+
+        <form name="first_name" action="{% url 'hello_user' %}" method="get">
+            <label for="first_name">first_name:</label>
+            <input id="first_name" name="first_name" placeholder="first_name">
+            <button type="submit"> ВВОД </button>
+        </form>
+
+    {% endif %}
+
+</body>
+</html>
